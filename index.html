@@ -1,0 +1,1272 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BDCalc – Free Online Tools for Bangladesh | জমি, ঋণ, বয়স ক্যালকুলেটর</title>
+<meta name="description" content="Free Bangladesh calculators: Land measurement converter (Katha, Bigha, Decimal), Loan EMI calculator, Age calculator, BMI calculator. Accurate tools for Bangladesh.">
+<meta name="keywords" content="bangladesh calculator, katha to decimal, bigha converter, loan emi calculator bangladesh, age calculator, bmi calculator bd, জমি পরিমাপ">
+<meta property="og:title" content="BDCalc – Free Online Tools for Bangladesh">
+<meta property="og:description" content="Katha, Bigha, Decimal converter + Loan EMI + Age + BMI calculators. Made for Bangladesh.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     AD PLACEMENT INSTRUCTIONS (Replace comments with real tags)
+     
+     ADSTERRA POPUNDER: Paste script just before </body>
+     MONETAG IN-PAGE PUSH: Paste script in <head> after fonts
+     MONETAG SMARTLINK: Use as href on "Sponsored" links
+     ============================================================ -->
+
+<!-- MONETAG IN-PAGE PUSH — paste your Monetag script tag here -->
+<!-- <script src="YOUR_MONETAG_SCRIPT_URL"></script> -->
+
+<style>
+  :root {
+    --green:   #00a550;
+    --red:     #e8192c;
+    --gold:    #f4b400;
+    --dark:    #0d1117;
+    --darker:  #080c10;
+    --surface: #141a22;
+    --card:    #1a2230;
+    --border:  #243040;
+    --text:    #e8edf2;
+    --muted:   #7a8fa6;
+    --accent:  #00d4a0;
+    --radius:  14px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--darker);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, #0a1520 0%, #0d1e10 50%, #0a1520 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    gap: 16px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .logo-icon {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, var(--green), var(--accent));
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+  }
+  .logo-text {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text);
+    letter-spacing: -0.5px;
+  }
+  .logo-text span { color: var(--accent); }
+
+  nav { display: flex; gap: 4px; flex-wrap: wrap; }
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: all .2s;
+    white-space: nowrap;
+  }
+  nav a:hover, nav a.active {
+    background: rgba(0,212,160,.12);
+    color: var(--accent);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, #0a1f14 0%, #0d1117 60%);
+    padding: 48px 20px 36px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 700px 300px at 50% -60px, rgba(0,165,80,.15) 0%, transparent 70%),
+      radial-gradient(ellipse 400px 200px at 80% 100%, rgba(0,212,160,.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .flag-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .flag-dot {
+    width: 24px; height: 16px;
+    background: var(--green);
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+  }
+  .flag-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-35%, -50%);
+    width: 9px; height: 9px;
+    background: var(--red);
+    border-radius: 50%;
+  }
+  .hero h1 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(26px, 5vw, 42px);
+    line-height: 1.2;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+  .hero p {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 500px;
+    margin: 0 auto 24px;
+  }
+  .tool-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  .pill {
+    background: rgba(255,255,255,.05);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all .2s;
+    text-decoration: none;
+  }
+  .pill:hover {
+    background: rgba(0,212,160,.12);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* ── AD BANNER SLOT ── */
+  .ad-slot {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .ad-banner {
+    background: rgba(255,255,255,.03);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 20px 0;
+    /* Replace this div with your Adsterra/Monetag banner tag */
+  }
+  .ad-banner-sm { height: 60px; }
+
+  /* ── MAIN LAYOUT ── */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 20px;
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .section-label .dot {
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .section-label h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .section-label span {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 400;
+    font-family: 'Tiro Bangla', serif;
+  }
+
+  /* ── TOOL CARD ── */
+  .tool-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 24px;
+    position: relative;
+    transition: border-color .2s;
+  }
+  .tool-card:hover { border-color: rgba(0,212,160,.3); }
+  .tool-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .tool-icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .tool-icon.green  { background: rgba(0,165,80,.15); }
+  .tool-icon.blue   { background: rgba(0,150,255,.15); }
+  .tool-icon.gold   { background: rgba(244,180,0,.15); }
+  .tool-icon.red    { background: rgba(232,25,44,.15); }
+  .tool-icon.purple { background: rgba(160,80,255,.15); }
+
+  .tool-card-header h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
+  }
+  .tool-card-header p {
+    font-size: 13px;
+    color: var(--muted);
+    font-family: 'Tiro Bangla', serif;
+    margin-top: 2px;
+  }
+
+  /* ── FORM ELEMENTS ── */
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .8px;
+  }
+  input[type="number"], select {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 11px 14px;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color .2s;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  input[type="number"]:focus, select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(0,212,160,.1);
+  }
+  input[type="number"]::placeholder { color: var(--muted); }
+
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a8fa6' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 38px;
+    cursor: pointer;
+  }
+  select option { background: var(--card); }
+
+  .btn {
+    background: linear-gradient(135deg, var(--green), #009944);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0,165,80,.3);
+  }
+  .btn:active { transform: translateY(0); }
+
+  .btn-clear {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+    padding: 12px 18px;
+  }
+  .btn-clear:hover {
+    border-color: var(--muted);
+    color: var(--text);
+    box-shadow: none;
+    transform: none;
+  }
+
+  /* ── RESULT BOX ── */
+  .result-box {
+    background: linear-gradient(135deg, rgba(0,212,160,.06) 0%, rgba(0,165,80,.04) 100%);
+    border: 1px solid rgba(0,212,160,.2);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 18px;
+    display: none;
+  }
+  .result-box.show { display: block; animation: fadeUp .25s ease; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .result-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+  }
+  .result-item {
+    background: rgba(255,255,255,.04);
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .result-item .val {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+    word-break: break-all;
+  }
+  .result-item .unit {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  .result-main .val { color: var(--accent); font-size: 26px; }
+
+  /* ── EMI TABLE ── */
+  .emi-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  @media (max-width: 480px) {
+    .emi-summary { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── TWO COLUMN LAYOUT ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 700px) {
+    .two-col { grid-template-columns: 1fr; }
+    nav { display: none; }
+  }
+
+  /* ── BMI GAUGE ── */
+  .bmi-gauge {
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to right, #2196F3 0%, #4CAF50 30%, #FF9800 60%, #F44336 85%, #9C27B0 100%);
+    border-radius: 10px;
+    position: relative;
+    margin: 12px 0 6px;
+  }
+  .bmi-marker {
+    position: absolute;
+    top: -6px;
+    width: 4px;
+    height: 32px;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(255,255,255,.5);
+    transform: translateX(-50%);
+    transition: left .5s cubic-bezier(.34,1.56,.64,1);
+  }
+  .bmi-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 600;
+    margin-top: 4px;
+  }
+  .bmi-category {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 10px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    padding: 28px 20px;
+    text-align: center;
+  }
+  footer p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 2;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  .footer-links {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--darker); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  /* ── TABS ── */
+  .tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 22px; }
+  .tab-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 7px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all .2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .tab-btn.active {
+    background: rgba(0,212,160,.15);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* ── CURRENCY RATE ── */
+  .rate-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(244,180,0,.1);
+    border: 1px solid rgba(244,180,0,.25);
+    border-radius: 8px;
+    padding: 5px 12px;
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* ── INFO NOTE ── */
+  .info-note {
+    background: rgba(0,150,255,.07);
+    border: 1px solid rgba(0,150,255,.15);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 12.5px;
+    color: #7ab8e8;
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+  .info-note strong { color: #a0d4f5; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════ -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">BD</div>
+      <div class="logo-text">BD<span>Calc</span></div>
+    </a>
+    <nav>
+      <a href="#land" class="active">🌾 Land</a>
+      <a href="#emi">💳 Loan EMI</a>
+      <a href="#age">🎂 Age</a>
+      <a href="#bmi">⚖️ BMI</a>
+      <a href="#currency">💱 Currency</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="flag-strip">
+    <div class="flag-dot"></div>
+    Bangladesh Free Tools
+  </div>
+  <h1>Free Online Calculators<br>for <em>Bangladesh</em></h1>
+  <p>Katha · Bigha · Decimal · Loan EMI · Age · BMI — accurate tools built for বাংলাদেশ</p>
+  <div class="tool-pills">
+    <a href="#land" class="pill">🌾 Land Converter</a>
+    <a href="#emi" class="pill">💳 Loan EMI</a>
+    <a href="#age" class="pill">🎂 Age Calculator</a>
+    <a href="#bmi" class="pill">⚖️ BMI</a>
+    <a href="#currency" class="pill">💱 Currency</a>
+    <a href="#salary" class="pill">💼 Salary Tax</a>
+  </div>
+</section>
+
+<!-- AD SLOT — Top Banner (replace with Adsterra 728x90 or Monetag) -->
+<div class="ad-slot">
+  <div class="ad-banner">Advertisement</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MAIN CONTENT
+═══════════════════════════════════════════ -->
+<div class="container">
+
+  <!-- ─────────────────────────────────────────
+       1. LAND MEASUREMENT CONVERTER
+  ───────────────────────────────────────── -->
+  <div id="land" class="section-label">
+    <div class="dot"></div>
+    <h2>Land Measurement Converter</h2>
+    <span>জমি পরিমাপ রূপান্তরকারী</span>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-card-header">
+      <div class="tool-icon green">🌾</div>
+      <div>
+        <h3>Bangladesh Land Unit Converter</h3>
+        <p>কাঠা, বিঘা, ডেসিমাল, শতাংশ, একর, বর্গফুট</p>
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Enter Value</label>
+        <input type="number" id="land-val" placeholder="e.g. 5" min="0" step="any">
+      </div>
+      <div class="form-group">
+        <label>From Unit</label>
+        <select id="land-from">
+          <option value="sqft">Square Feet (বর্গফুট)</option>
+          <option value="sqm">Square Meter (বর্গমিটার)</option>
+          <option value="katha" selected>Katha (কাঠা)</option>
+          <option value="bigha">Bigha (বিঘা)</option>
+          <option value="decimal">Decimal / Shotok (ডেসিমাল)</option>
+          <option value="acre">Acre (একর)</option>
+          <option value="kani">Kani (কানি)</option>
+          <option value="gonda">Gonda (গণ্ডা)</option>
+        </select>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <button class="btn" onclick="convertLand()">⚡ Convert</button>
+      <button class="btn btn-clear" onclick="clearLand()">Clear</button>
+    </div>
+
+    <div class="result-box" id="land-result">
+      <div class="result-title">📐 Conversion Results</div>
+      <div class="result-grid" id="land-grid"></div>
+      <div class="info-note" style="margin-top:14px">
+        <strong>Note:</strong> Based on Bangladesh standard: 1 Katha = 720 sq ft | 1 Bigha = 20 Katha = 14,400 sq ft | 1 Decimal = 435.6 sq ft | 1 Acre = 100 Decimal. Regional variations may apply — verify with local AC Land office.
+      </div>
+    </div>
+  </div>
+
+  <!-- AD SLOT — Mid Banner -->
+  <div class="ad-banner ad-banner-sm" style="border-radius:12px;margin-bottom:28px;">Advertisement</div>
+
+  <!-- ─────────────────────────────────────────
+       2. LOAN EMI CALCULATOR
+  ───────────────────────────────────────── -->
+  <div id="emi" class="section-label">
+    <div class="dot"></div>
+    <h2>Bank Loan EMI Calculator</h2>
+    <span>ঋণের কিস্তি হিসাব</span>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-card-header">
+      <div class="tool-icon blue">💳</div>
+      <div>
+        <h3>EMI Calculator — Bangladesh Banks</h3>
+        <p>Sonali, Dutch-Bangla, BRAC, Islami Bank হোম / পার্সোনাল লোন</p>
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Loan Amount (BDT ৳)</label>
+        <input type="number" id="emi-principal" placeholder="e.g. 500000" min="1000">
+      </div>
+      <div class="form-group">
+        <label>Annual Interest Rate (%)</label>
+        <input type="number" id="emi-rate" placeholder="e.g. 9" min="0" step="0.1">
+      </div>
+      <div class="form-group">
+        <label>Loan Tenure (Years)</label>
+        <input type="number" id="emi-years" placeholder="e.g. 5" min="1" max="30">
+      </div>
+      <div class="form-group">
+        <label>Loan Type</label>
+        <select id="emi-type">
+          <option value="reducing">Reducing Balance</option>
+          <option value="flat">Flat Rate</option>
+        </select>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <button class="btn" onclick="calcEMI()">⚡ Calculate EMI</button>
+      <button class="btn btn-clear" onclick="clearEMI()">Clear</button>
+    </div>
+
+    <div class="result-box" id="emi-result">
+      <div class="result-title">💰 EMI Breakdown</div>
+      <div class="emi-summary" id="emi-grid"></div>
+
+      <div class="result-title" style="margin-top:14px">📅 First 6 Month Schedule</div>
+      <div style="overflow-x:auto">
+        <table id="emi-table" style="width:100%;border-collapse:collapse;font-size:13px">
+          <thead>
+            <tr style="color:var(--muted);text-align:left">
+              <th style="padding:8px 12px;border-bottom:1px solid var(--border)">Month</th>
+              <th style="padding:8px 12px;border-bottom:1px solid var(--border)">EMI ৳</th>
+              <th style="padding:8px 12px;border-bottom:1px solid var(--border)">Principal ৳</th>
+              <th style="padding:8px 12px;border-bottom:1px solid var(--border)">Interest ৳</th>
+              <th style="padding:8px 12px;border-bottom:1px solid var(--border)">Balance ৳</th>
+            </tr>
+          </thead>
+          <tbody id="emi-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────────────
+       3. AGE CALCULATOR
+  ───────────────────────────────────────── -->
+  <div id="age" class="section-label">
+    <div class="dot"></div>
+    <h2>Age Calculator</h2>
+    <span>বয়স ক্যালকুলেটর</span>
+  </div>
+
+  <div class="two-col">
+    <div class="tool-card" style="margin-bottom:0">
+      <div class="tool-card-header">
+        <div class="tool-icon gold">🎂</div>
+        <div>
+          <h3>Exact Age Calculator</h3>
+          <p>বছর, মাস, দিন সহ সঠিক বয়স</p>
+        </div>
+      </div>
+
+      <div class="form-grid" style="grid-template-columns:1fr">
+        <div class="form-group">
+          <label>Date of Birth</label>
+          <input type="number" id="age-year" placeholder="Year (e.g. 1995)" min="1900" max="2025">
+        </div>
+        <div class="form-grid" style="grid-template-columns:1fr 1fr;margin-bottom:0">
+          <div class="form-group">
+            <label>Month</label>
+            <select id="age-month">
+              <option value="1">January</option><option value="2">February</option>
+              <option value="3">March</option><option value="4">April</option>
+              <option value="5">May</option><option value="6">June</option>
+              <option value="7">July</option><option value="8">August</option>
+              <option value="9">September</option><option value="10">October</option>
+              <option value="11">November</option><option value="12">December</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Day</label>
+            <input type="number" id="age-day" placeholder="Day" min="1" max="31">
+          </div>
+        </div>
+      </div>
+
+      <button class="btn" style="margin-top:14px" onclick="calcAge()">⚡ Calculate Age</button>
+
+      <div class="result-box" id="age-result">
+        <div class="result-title">🎉 Your Age</div>
+        <div class="result-grid" id="age-grid"></div>
+      </div>
+    </div>
+
+    <!-- ─── BMI ─── -->
+    <div id="bmi" class="tool-card" style="margin-bottom:0">
+      <div class="tool-card-header">
+        <div class="tool-icon red">⚖️</div>
+        <div>
+          <h3>BMI Calculator</h3>
+          <p>বডি মাস ইনডেক্স</p>
+        </div>
+      </div>
+
+      <div class="form-grid" style="grid-template-columns:1fr 1fr">
+        <div class="form-group">
+          <label>Weight (kg)</label>
+          <input type="number" id="bmi-weight" placeholder="e.g. 65" min="10" max="300" step="0.1">
+        </div>
+        <div class="form-group">
+          <label>Height (cm)</label>
+          <input type="number" id="bmi-height" placeholder="e.g. 170" min="50" max="250">
+        </div>
+      </div>
+      <div class="form-group" style="margin-bottom:14px">
+        <label>Gender</label>
+        <select id="bmi-gender">
+          <option value="male">Male (পুরুষ)</option>
+          <option value="female">Female (মহিলা)</option>
+        </select>
+      </div>
+
+      <button class="btn" onclick="calcBMI()">⚡ Calculate BMI</button>
+
+      <div class="result-box" id="bmi-result">
+        <div class="result-title">📊 BMI Result</div>
+        <div id="bmi-val-display"></div>
+        <div class="bmi-gauge"><div class="bmi-marker" id="bmi-marker" style="left:0%"></div></div>
+        <div class="bmi-labels">
+          <span>Under</span><span>Normal</span><span>Over</span><span>Obese</span>
+        </div>
+        <div id="bmi-advice" style="margin-top:10px;font-size:13px;color:var(--muted)"></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:24px"></div>
+
+  <!-- AD SLOT — Mid page -->
+  <div class="ad-banner" style="border-radius:12px;margin-bottom:28px;">Advertisement</div>
+
+  <!-- ─────────────────────────────────────────
+       4. CURRENCY CONVERTER
+  ───────────────────────────────────────── -->
+  <div id="currency" class="section-label">
+    <div class="dot"></div>
+    <h2>BDT Currency Converter</h2>
+    <span>টাকা রূপান্তরকারী</span>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-card-header">
+      <div class="tool-icon purple">💱</div>
+      <div>
+        <h3>Bangladeshi Taka Converter</h3>
+        <p>USD · EUR · INR · SAR · AED · GBP to BDT</p>
+      </div>
+    </div>
+
+    <div style="margin-bottom:16px">
+      <span class="rate-badge">⚡ Indicative rates — verify with your bank</span>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Amount</label>
+        <input type="number" id="cur-amount" placeholder="Enter amount" min="0" step="any">
+      </div>
+      <div class="form-group">
+        <label>From Currency</label>
+        <select id="cur-from">
+          <option value="USD">🇺🇸 USD — US Dollar</option>
+          <option value="EUR">🇪🇺 EUR — Euro</option>
+          <option value="GBP">🇬🇧 GBP — British Pound</option>
+          <option value="INR">🇮🇳 INR — Indian Rupee</option>
+          <option value="SAR">🇸🇦 SAR — Saudi Riyal</option>
+          <option value="AED">🇦🇪 AED — UAE Dirham</option>
+          <option value="SGD">🇸🇬 SGD — Singapore Dollar</option>
+          <option value="MYR">🇲🇾 MYR — Malaysian Ringgit</option>
+          <option value="BDT">🇧🇩 BDT — Bangladeshi Taka</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>To Currency</label>
+        <select id="cur-to">
+          <option value="BDT" selected>🇧🇩 BDT — Bangladeshi Taka</option>
+          <option value="USD">🇺🇸 USD — US Dollar</option>
+          <option value="EUR">🇪🇺 EUR — Euro</option>
+          <option value="GBP">🇬🇧 GBP — British Pound</option>
+          <option value="INR">🇮🇳 INR — Indian Rupee</option>
+          <option value="SAR">🇸🇦 SAR — Saudi Riyal</option>
+          <option value="AED">🇦🇪 AED — UAE Dirham</option>
+          <option value="SGD">🇸🇬 SGD — Singapore Dollar</option>
+          <option value="MYR">🇲🇾 MYR — Malaysian Ringgit</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="btn" onclick="convertCurrency()">⚡ Convert</button>
+
+    <div class="result-box" id="cur-result">
+      <div class="result-title">💰 Conversion Result</div>
+      <div class="result-grid" id="cur-grid"></div>
+      <div class="info-note">
+        <strong>Disclaimer:</strong> Rates are indicative (mid-market approximations). For actual transactions, check Bangladesh Bank (bb.org.bd) or your bank's official rate.
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────────────
+       5. SALARY TAX ESTIMATOR
+  ───────────────────────────────────────── -->
+  <div id="salary" class="section-label">
+    <div class="dot"></div>
+    <h2>Income Tax Estimator</h2>
+    <span>আয়কর আনুমানিক হিসাব ২০২৫–২৬</span>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-card-header">
+      <div class="tool-icon green">📊</div>
+      <div>
+        <h3>Bangladesh Income Tax Estimator 2025–26</h3>
+        <p>NBR tax slabs for individual taxpayers</p>
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Annual Income (BDT ৳)</label>
+        <input type="number" id="tax-income" placeholder="e.g. 600000" min="0">
+      </div>
+      <div class="form-group">
+        <label>Taxpayer Category</label>
+        <select id="tax-gender">
+          <option value="general">General (Male)</option>
+          <option value="female">Female / Senior (65+)</option>
+          <option value="disabled">Person with Disability</option>
+          <option value="freedom">Freedom Fighter</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="btn" onclick="calcTax()">⚡ Estimate Tax</button>
+
+    <div class="result-box" id="tax-result">
+      <div class="result-title">🧾 Tax Breakdown</div>
+      <div class="result-grid" id="tax-grid"></div>
+      <div class="info-note">
+        <strong>Note:</strong> This is an estimate based on NBR 2025–26 slabs. Actual tax may vary based on deductions, investments (6th Schedule), and professional advice. Always file with a certified tax consultant.
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- AD SLOT — Before footer -->
+<div class="ad-slot">
+  <div class="ad-banner">Advertisement</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer>
+  <p>🇧🇩 <strong>BDCalc</strong> — Free Online Tools for Bangladesh | সম্পূর্ণ বিনামূল্যে</p>
+  <p>Land Converter · Loan EMI · Age · BMI · Currency · Income Tax</p>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Disclaimer</a>
+    <a href="#">Contact</a>
+    <a href="https://bb.org.bd" target="_blank" rel="nofollow">Bangladesh Bank</a>
+    <a href="https://nbr.gov.bd" target="_blank" rel="nofollow">NBR Tax</a>
+  </div>
+  <p style="margin-top:12px;font-size:11px">© 2026 BDCalc · All calculations are estimates only. Not financial or legal advice.</p>
+</footer>
+
+<!-- ADSTERRA POPUNDER — paste your script tag here, just before </body> -->
+<!-- <script src="YOUR_ADSTERRA_POPUNDER_URL"></script> -->
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════ -->
+<script>
+/* ─── LAND CONVERTER ─── */
+// Base: all in square feet
+const LAND_TO_SQFT = {
+  sqft:    1,
+  sqm:     10.7639,
+  katha:   720,
+  bigha:   14400,    // 20 katha
+  decimal: 435.6,    // 1 decimal = 435.6 sqft
+  acre:    43560,    // 100 decimal
+  kani:    17280,    // 40 gonda; Chittagong standard
+  gonda:   432,      // 1 gonda = 432 sqft approx
+};
+const LAND_LABELS = {
+  sqft:    { label: 'Square Feet', bn: 'বর্গফুট' },
+  sqm:     { label: 'Square Meter', bn: 'বর্গমিটার' },
+  katha:   { label: 'Katha', bn: 'কাঠা' },
+  bigha:   { label: 'Bigha', bn: 'বিঘা' },
+  decimal: { label: 'Decimal / Shotok', bn: 'ডেসিমাল / শতক' },
+  acre:    { label: 'Acre', bn: 'একর' },
+  kani:    { label: 'Kani', bn: 'কানি' },
+  gonda:   { label: 'Gonda', bn: 'গণ্ডা' },
+};
+
+function convertLand() {
+  const val = parseFloat(document.getElementById('land-val').value);
+  const from = document.getElementById('land-from').value;
+  if (isNaN(val) || val < 0) { alert('Please enter a valid positive number.'); return; }
+
+  const sqft = val * LAND_TO_SQFT[from];
+  const grid = document.getElementById('land-grid');
+  grid.innerHTML = '';
+
+  Object.keys(LAND_TO_SQFT).forEach(unit => {
+    const converted = sqft / LAND_TO_SQFT[unit];
+    const el = document.createElement('div');
+    el.className = 'result-item' + (unit === from ? ' result-main' : '');
+    el.innerHTML = `<div class="val">${fmt(converted)}</div><div class="unit">${LAND_LABELS[unit].label}<br><span style="font-family:'Tiro Bangla'">${LAND_LABELS[unit].bn}</span></div>`;
+    grid.appendChild(el);
+  });
+
+  show('land-result');
+}
+
+function clearLand() {
+  document.getElementById('land-val').value = '';
+  hide('land-result');
+}
+
+/* ─── EMI CALCULATOR ─── */
+function calcEMI() {
+  const P = parseFloat(document.getElementById('emi-principal').value);
+  const annualR = parseFloat(document.getElementById('emi-rate').value);
+  const years = parseInt(document.getElementById('emi-years').value);
+  const type = document.getElementById('emi-type').value;
+
+  if (!P || !annualR || !years) { alert('Please fill all loan fields.'); return; }
+
+  const n = years * 12;
+  let emi, totalPay, totalInt;
+
+  if (type === 'reducing') {
+    const r = annualR / 12 / 100;
+    emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    totalPay = emi * n;
+    totalInt = totalPay - P;
+  } else {
+    totalInt = P * (annualR / 100) * years;
+    totalPay = P + totalInt;
+    emi = totalPay / n;
+  }
+
+  const grid = document.getElementById('emi-grid');
+  grid.innerHTML = `
+    <div class="result-item result-main"><div class="val">৳${fmtBDT(emi)}</div><div class="unit">Monthly EMI</div></div>
+    <div class="result-item"><div class="val">৳${fmtBDT(totalPay)}</div><div class="unit">Total Payment</div></div>
+    <div class="result-item"><div class="val">৳${fmtBDT(totalInt)}</div><div class="unit">Total Interest</div></div>
+  `;
+
+  // Amortisation schedule (6 months)
+  const tbody = document.getElementById('emi-tbody');
+  tbody.innerHTML = '';
+  let balance = P;
+  const r = annualR / 12 / 100;
+
+  for (let m = 1; m <= Math.min(6, n); m++) {
+    let intPart, prinPart;
+    if (type === 'reducing') {
+      intPart = balance * r;
+      prinPart = emi - intPart;
+    } else {
+      intPart = (P * annualR / 100) / 12;
+      prinPart = emi - intPart;
+    }
+    balance -= prinPart;
+    tbody.innerHTML += `
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:8px 12px;color:var(--muted)">${m}</td>
+        <td style="padding:8px 12px;font-family:'Space Mono',monospace">৳${fmtBDT(emi)}</td>
+        <td style="padding:8px 12px;color:#4caf50;font-family:'Space Mono',monospace">৳${fmtBDT(prinPart)}</td>
+        <td style="padding:8px 12px;color:#ff7043;font-family:'Space Mono',monospace">৳${fmtBDT(intPart)}</td>
+        <td style="padding:8px 12px;font-family:'Space Mono',monospace">৳${fmtBDT(Math.max(0,balance))}</td>
+      </tr>`;
+  }
+
+  show('emi-result');
+}
+function clearEMI() {
+  ['emi-principal','emi-rate','emi-years'].forEach(id => document.getElementById(id).value = '');
+  hide('emi-result');
+}
+
+/* ─── AGE CALCULATOR ─── */
+function calcAge() {
+  const year  = parseInt(document.getElementById('age-year').value);
+  const month = parseInt(document.getElementById('age-month').value);
+  const day   = parseInt(document.getElementById('age-day').value);
+
+  if (!year || !month || !day) { alert('Please fill birth date fields.'); return; }
+
+  const birth = new Date(year, month - 1, day);
+  const today = new Date();
+
+  if (birth > today) { alert('Date of birth cannot be in the future.'); return; }
+
+  let yrs = today.getFullYear() - birth.getFullYear();
+  let mos = today.getMonth() - birth.getMonth();
+  let dys = today.getDate() - birth.getDate();
+
+  if (dys < 0) { mos--; dys += new Date(today.getFullYear(), today.getMonth(), 0).getDate(); }
+  if (mos < 0) { yrs--; mos += 12; }
+
+  const totalDays = Math.floor((today - birth) / 86400000);
+  const nextBd = new Date(today.getFullYear(), month - 1, day);
+  if (nextBd <= today) nextBd.setFullYear(nextBd.getFullYear() + 1);
+  const daysToNext = Math.floor((nextBd - today) / 86400000);
+
+  const grid = document.getElementById('age-grid');
+  grid.innerHTML = `
+    <div class="result-item result-main"><div class="val">${yrs}</div><div class="unit">Years (বছর)</div></div>
+    <div class="result-item"><div class="val">${mos}</div><div class="unit">Months (মাস)</div></div>
+    <div class="result-item"><div class="val">${dys}</div><div class="unit">Days (দিন)</div></div>
+    <div class="result-item"><div class="val">${totalDays.toLocaleString()}</div><div class="unit">Total Days</div></div>
+    <div class="result-item"><div class="val">${daysToNext}</div><div class="unit">Days to Birthday 🎂</div></div>
+    <div class="result-item"><div class="val">${(totalDays * 24).toLocaleString()}</div><div class="unit">Total Hours</div></div>
+  `;
+  show('age-result');
+}
+
+/* ─── BMI CALCULATOR ─── */
+function calcBMI() {
+  const w = parseFloat(document.getElementById('bmi-weight').value);
+  const h = parseFloat(document.getElementById('bmi-height').value);
+  if (!w || !h) { alert('Enter weight and height.'); return; }
+
+  const bmi = w / Math.pow(h / 100, 2);
+
+  let cat, color, pct, advice;
+  if (bmi < 18.5) {
+    cat = 'Underweight'; color = '#2196F3'; pct = (bmi / 30) * 25;
+    advice = '⚠️ You are underweight. Consider consulting a nutritionist for a balanced diet plan.';
+  } else if (bmi < 25) {
+    cat = 'Normal Weight ✓'; color = '#4CAF50'; pct = 25 + ((bmi - 18.5) / 6.5) * 25;
+    advice = '✅ Great! You have a healthy weight. Maintain with regular exercise and balanced diet.';
+  } else if (bmi < 30) {
+    cat = 'Overweight'; color = '#FF9800'; pct = 50 + ((bmi - 25) / 5) * 25;
+    advice = '⚠️ You are slightly overweight. Regular exercise and mindful eating can help.';
+  } else {
+    cat = 'Obese'; color = '#F44336'; pct = Math.min(95, 75 + ((bmi - 30) / 10) * 20);
+    advice = '🔴 Obesity increases health risks. Please consult a doctor for a safe weight management plan.';
+  }
+
+  document.getElementById('bmi-val-display').innerHTML = `
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <div class="result-item result-main" style="min-width:110px"><div class="val">${bmi.toFixed(1)}</div><div class="unit">BMI Score</div></div>
+      <span class="bmi-category" style="background:${color}22;color:${color};border:1px solid ${color}44">${cat}</span>
+    </div>`;
+
+  document.getElementById('bmi-marker').style.left = `${Math.min(95, Math.max(2, pct))}%`;
+  document.getElementById('bmi-advice').textContent = advice;
+  show('bmi-result');
+}
+
+/* ─── CURRENCY CONVERTER ─── */
+// Fixed reference rates vs USD (updated indicatively — user should verify)
+const FX_TO_USD = {
+  USD: 1, EUR: 1.09, GBP: 1.27, INR: 0.01198,
+  SAR: 0.2667, AED: 0.2723, SGD: 0.744, MYR: 0.213,
+  BDT: 0.00833   // approx 1 USD = 120 BDT
+};
+
+function convertCurrency() {
+  const amt = parseFloat(document.getElementById('cur-amount').value);
+  const from = document.getElementById('cur-from').value;
+  const to = document.getElementById('cur-to').value;
+  if (!amt || amt <= 0) { alert('Enter a valid amount.'); return; }
+
+  const inUSD = amt * FX_TO_USD[from];
+  const result = inUSD / FX_TO_USD[to];
+
+  const grid = document.getElementById('cur-grid');
+  grid.innerHTML = `
+    <div class="result-item"><div class="val">${amt.toLocaleString('en-BD')}</div><div class="unit">${from}</div></div>
+    <div style="display:flex;align-items:center;font-size:24px;color:var(--accent)">→</div>
+    <div class="result-item result-main"><div class="val">${result.toLocaleString('en-BD', {maximumFractionDigits: 2})}</div><div class="unit">${to}</div></div>
+    <div class="result-item"><div class="val">${(1 / FX_TO_USD[from] * FX_TO_USD[to]).toFixed(4)}</div><div class="unit">1 ${to} = ? ${from}</div></div>
+  `;
+  show('cur-result');
+}
+
+/* ─── INCOME TAX ─── */
+// Bangladesh NBR 2025-26 slabs (individual, approximate)
+function calcTax() {
+  const income = parseFloat(document.getElementById('tax-income').value);
+  const cat = document.getElementById('tax-gender').value;
+  if (!income || income < 0) { alert('Enter annual income.'); return; }
+
+  // Free tax exemption thresholds
+  const thresholds = {
+    general:  350000,
+    female:   400000,
+    disabled: 475000,
+    freedom:  475000
+  };
+  const exemption = thresholds[cat] || 350000;
+
+  if (income <= exemption) {
+    document.getElementById('tax-grid').innerHTML = `
+      <div class="result-item result-main"><div class="val">৳0</div><div class="unit">Tax Payable</div></div>
+      <div class="result-item"><div class="val">Nil</div><div class="unit">Tax Rate</div></div>
+      <div class="result-item"><div class="val">৳${fmtBDT(exemption)}</div><div class="unit">Your Exemption Limit</div></div>
+    `;
+    show('tax-result');
+    return;
+  }
+
+  // Slabs above exemption (NBR standard slabs)
+  const slabs = [
+    { limit: 100000, rate: 0.05 },
+    { limit: 400000, rate: 0.10 },
+    { limit: 500000, rate: 0.15 },
+    { limit: 500000, rate: 0.20 },
+    { limit: Infinity, rate: 0.25 }
+  ];
+
+  let taxable = income - exemption;
+  let totalTax = 0;
+  let breakdown = '';
+
+  for (const slab of slabs) {
+    if (taxable <= 0) break;
+    const chunk = Math.min(taxable, slab.limit);
+    const slabTax = chunk * slab.rate;
+    totalTax += slabTax;
+    breakdown += `<div class="result-item"><div class="val">৳${fmtBDT(slabTax)}</div><div class="unit">@${slab.rate*100}% on ৳${fmtBDT(chunk)}</div></div>`;
+    taxable -= chunk;
+  }
+
+  document.getElementById('tax-grid').innerHTML = `
+    <div class="result-item result-main"><div class="val">৳${fmtBDT(totalTax)}</div><div class="unit">Est. Tax Payable</div></div>
+    <div class="result-item"><div class="val">৳${fmtBDT(income - totalTax)}</div><div class="unit">Net Take-Home</div></div>
+    <div class="result-item"><div class="val">${((totalTax/income)*100).toFixed(1)}%</div><div class="unit">Effective Rate</div></div>
+    ${breakdown}
+  `;
+  show('tax-result');
+}
+
+/* ─── UTILS ─── */
+function fmt(n) {
+  if (n === 0) return '0';
+  if (n >= 1000) return n.toLocaleString('en-BD', { maximumFractionDigits: 2 });
+  if (n >= 1) return n.toFixed(4).replace(/\.?0+$/, '');
+  return n.toFixed(6).replace(/\.?0+$/, '');
+}
+function fmtBDT(n) {
+  return n.toLocaleString('en-BD', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+}
+function show(id) { document.getElementById(id).classList.add('show'); }
+function hide(id) { document.getElementById(id).classList.remove('show'); }
+
+/* ─── NAV ACTIVE STATE ─── */
+window.addEventListener('scroll', () => {
+  const sections = ['land','emi','age','bmi','currency','salary'];
+  const links = document.querySelectorAll('nav a');
+  let current = '';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 100) current = id;
+  });
+  links.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+</script>
+
+</body>
+</html>
